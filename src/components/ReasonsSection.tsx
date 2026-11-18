@@ -94,7 +94,7 @@ export default function ReasonsSection() {
         <div className="flex items-center justify-between text-sm sm:text-base font-bold text-purple-200 mb-2 px-1">
           <span className="flex items-center gap-1.5">
             <Sparkles className="w-4 h-4 text-[#C084FC]" />
-            <span>Progreso de amor:</span>
+            <span>Progreso:</span>
           </span>
           <span className="text-[#E9D5FF] tracking-wider font-extrabold">
             {count}/{total} motivos descubiertos
@@ -124,7 +124,7 @@ export default function ReasonsSection() {
           </motion.div>
         ) : (
           <p className="mt-3 text-xs sm:text-sm text-purple-300/80 italic">
-            Toca cada estrellita para descubrir un secreto de amor ✨
+            Toca cada estrellita para descubrir un motivo especial ✨
           </p>
         )}
       </div>

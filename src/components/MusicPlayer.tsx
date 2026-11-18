@@ -105,7 +105,7 @@ export default function MusicPlayer() {
   }, []);
 
   return (
-    <div className="fixed bottom-5 right-5 z-40">
+    <div className="fixed bottom-4 right-4 z-30">
       {/* Hidden audio element pointing to optional user mp3 */}
       <audio
         ref={audioRef}

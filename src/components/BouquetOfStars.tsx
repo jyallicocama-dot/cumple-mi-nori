@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Heart } from "lucide-react";
+import { Sparkles, Flower2 } from "lucide-react";
 
 export default function BouquetOfStars() {
   return (
@@ -50,7 +50,7 @@ export default function BouquetOfStars() {
           transition={{ duration: 3, repeat: Infinity, delay: 1.2, ease: "easeInOut" }}
           className="absolute bottom-16 -right-2 text-pink-300 drop-shadow-[0_0_10px_#F472B6]"
         >
-          <Heart className="w-5 h-5 fill-pink-400/40" />
+          <Flower2 className="w-5 h-5 text-purple-300" />
         </motion.div>
 
         {/* The SVG Bouquet */}
@@ -369,8 +369,8 @@ export default function BouquetOfStars() {
           <span className="text-purple-400">✨</span>
         </h3>
         <p className="text-sm sm:text-base text-purple-200/90 font-medium italic flex items-center justify-center gap-1.5">
-          <span>Hecho con amor, para Mi Ñori</span>
-          <Heart className="w-4 h-4 text-pink-400 fill-pink-400 inline" />
+          <span>Hecho con mucho aprecio, para Mi Ñori</span>
+          <span className="text-sm">💐</span>
         </p>
       </div>
     </motion.div>

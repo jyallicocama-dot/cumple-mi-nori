@@ -7,11 +7,11 @@ import BouquetOfStars from "../components/BouquetOfStars";
 import LoveCard from "../components/LoveCard";
 import ReasonsSection from "../components/ReasonsSection";
 import MusicPlayer from "../components/MusicPlayer";
-import { Sparkles, Heart } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen w-full bg-black text-white overflow-hidden flex flex-col justify-between selection:bg-purple-600 selection:text-white">
+    <main className="relative min-h-screen w-full bg-black text-white overflow-x-hidden flex flex-col justify-between selection:bg-purple-600 selection:text-white">
       {/* Dynamic Star Field Canvas */}
       <StarField />
 
@@ -21,7 +21,7 @@ export default function HomePage() {
         {/* HEADER SECTION */}
         <header className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 space-y-4">
           
-          {/* Top romantic tag */}
+          {/* Top special tag */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -29,8 +29,8 @@ export default function HomePage() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-950/70 border border-purple-500/40 text-purple-200 text-xs sm:text-sm font-semibold shadow-[0_0_20px_rgba(168,85,247,0.3)] backdrop-blur-sm"
           >
             <Sparkles className="w-3.5 h-3.5 text-purple-300 animate-spin" />
-            <span>Un regalo de cumpleaños inolvidable</span>
-            <Heart className="w-3.5 h-3.5 text-pink-400 fill-pink-400" />
+            <span>Celebrando tus 21 años</span>
+            <span className="text-sm">💐</span>
           </motion.div>
 
           {/* Main Title: "Feliz Cumpleaños Mi Ñori ⭐" */}
@@ -49,14 +49,14 @@ export default function HomePage() {
             </span>
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Subtitle updated: No 'te amo', but a beautiful expression of deep caring and appreciation */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-base sm:text-xl text-purple-200/90 font-medium max-w-2xl mx-auto leading-relaxed"
           >
-            Toca las 21 estrellitas, cada una es un motivo por el que te amo 💜
+            Toca las 21 estrellitas, cada una es un motivo por el que te tengo un gran cariño 💜
           </motion.p>
         </header>
 
@@ -67,7 +67,7 @@ export default function HomePage() {
             <BouquetOfStars />
           </div>
 
-          {/* Right Column: Love card */}
+          {/* Right Column: Special card */}
           <div className="w-full flex justify-center">
             <LoveCard />
           </div>
@@ -82,9 +82,9 @@ export default function HomePage() {
       {/* FOOTER */}
       <footer className="relative z-10 w-full py-8 text-center text-xs sm:text-sm text-purple-400/80 border-t border-purple-950/60 bg-black/50 backdrop-blur-sm">
         <p className="flex items-center justify-center gap-1.5">
-          <span>Hecho con todo mi amor para Mi Ñori</span>
-          <Heart className="w-4 h-4 text-pink-400 fill-pink-400 inline" />
-          <span>• 21 Motivos para celebrar tu vida</span>
+          <span>Hecho con mucho aprecio para Mi Ñori</span>
+          <span className="text-sm">💐</span>
+          <span>• 21 Motivos para celebrar tus 21 años</span>
         </p>
       </footer>
 

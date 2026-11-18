@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Heart, Crown, X, RotateCcw } from "lucide-react";
+import { Sparkles, Crown, X, RotateCcw } from "lucide-react";
 import confetti from "canvas-confetti";
 
 interface CelebrationModalProps {
@@ -50,23 +50,24 @@ export default function CelebrationModal({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-x-hidden overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/85 backdrop-blur-md"
+          className="fixed inset-0 bg-black/90 backdrop-blur-md"
         />
 
         {/* Modal Window */}
         <motion.div
-          initial={{ scale: 0.75, opacity: 0, y: 30 }}
+          initial={{ scale: 0.85, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
-          exit={{ scale: 0.8, opacity: 0, y: 30 }}
-          transition={{ type: "spring", damping: 22, stiffness: 280 }}
-          className="relative w-full max-w-lg bg-gradient-to-b from-[#2A0E3D] via-[#1A092A] to-[#0A0012] text-white rounded-3xl border-4 border-[#C084FC] shadow-[0_0_65px_rgba(192,132,252,0.7)] p-6 sm:p-9 z-10 text-center overflow-hidden"
+          exit={{ scale: 0.85, opacity: 0, y: 20 }}
+          transition={{ type: "spring", damping: 24, stiffness: 300 }}
+          style={{ touchAction: "pan-y" }}
+          className="relative w-full max-w-[calc(100vw-1.5rem)] sm:max-w-lg bg-gradient-to-b from-[#2A0E3D] via-[#1A092A] to-[#0A0012] text-white rounded-3xl border-4 border-[#C084FC] shadow-[0_0_65px_rgba(192,132,252,0.7)] p-6 sm:p-9 z-10 text-center overflow-x-hidden overflow-y-auto max-h-[90vh]"
         >
           {/* Close button */}
           <button
@@ -88,25 +89,25 @@ export default function CelebrationModal({
 
           {/* Heading */}
           <h2 className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-white to-purple-300 mb-3 tracking-tight">
-            ¡Descubriste los 21 motivos! 💜
+            ¡Descubriste los 21 motivos! 💐
           </h2>
 
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 via-fuchsia-400 to-pink-500 mx-auto rounded-full mb-5" />
 
-          {/* Required specific celebration text */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-purple-950/60 border border-purple-600/40 mb-6 shadow-inner">
-            <p className="text-lg sm:text-xl font-semibold text-purple-100 leading-snug">
-              &ldquo;Ahora ya sabes por qué eres mi Ñori, mi todo.&rdquo;
+          {/* Celebration message */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-purple-950/60 border border-purple-600/40 mb-6 shadow-inner text-left sm:text-center">
+            <p className="text-base sm:text-lg font-bold text-purple-100 leading-snug">
+              &ldquo;Llegaste a los 21 años, Mi Ñori.&rdquo;
             </p>
-            <p className="mt-3 text-sm text-purple-300 font-normal leading-relaxed">
-              Gracias por cada sonrisa, cada mirada y cada momento a tu lado. Que este nuevo año de vida te traiga toda la felicidad del mundo, porque te mereces el universo entero.
+            <p className="mt-3 text-xs sm:text-sm text-purple-200 font-normal leading-relaxed">
+              Te deseo el mayor de los éxitos en esta nueva vuelta al sol. Que la vida te sonría, que alcances cada una de tus metas y que nunca pierdas esa chispa tan tuya. ¡Muchas felicidades en tu día!
             </p>
           </div>
 
-          <div className="flex items-center justify-center gap-2 text-pink-300 text-sm font-semibold mb-6">
-            <Heart className="w-4 h-4 fill-pink-400" />
-            <span>Feliz Cumpleaños, Mi Amor Eterno</span>
-            <Heart className="w-4 h-4 fill-pink-400" />
+          <div className="flex items-center justify-center gap-2 text-purple-300 text-sm font-semibold mb-6">
+            <span>💐</span>
+            <span>¡Feliz Cumpleaños en tus 21!</span>
+            <span>💐</span>
           </div>
 
           {/* Action buttons */}
@@ -115,8 +116,7 @@ export default function CelebrationModal({
               onClick={onClose}
               className="w-full sm:w-auto px-6 py-2.5 rounded-full font-bold text-sm bg-gradient-to-r from-[#A855F7] to-[#C084FC] hover:from-purple-500 hover:to-purple-400 text-white shadow-[0_0_20px_rgba(168,85,247,0.7)] transition-all flex items-center justify-center gap-2"
             >
-              <Heart className="w-4 h-4 fill-white" />
-              <span>Guardar en mi corazón</span>
+              <span>Celebrar 💐</span>
             </button>
 
             <button
@@ -124,7 +124,7 @@ export default function CelebrationModal({
               className="w-full sm:w-auto px-5 py-2.5 rounded-full font-medium text-xs text-purple-300 hover:text-white bg-purple-950/60 hover:bg-purple-900/60 border border-purple-700/50 transition-all flex items-center justify-center gap-1.5"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>Volver a descubrirlos</span>
+              <span>Volver a verlos</span>
             </button>
           </div>
         </motion.div>
