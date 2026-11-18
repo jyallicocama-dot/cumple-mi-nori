@@ -3,170 +3,176 @@ import { Reason } from "../types";
 export const reasonsData: Reason[] = [
   {
     id: 1,
-    title: "Me encanta tu sonrisa",
-    shortDescription: "Me arregla el día por completo",
+    title: "Nunca dejes de sonreír",
+    shortDescription: "Tu risa es la esencia que ilumina todo",
     fullMessage:
-      "Basta con ver cómo se iluminan tus labios y se achinan tus ojitos para que cualquier problema se desvanezca. Tu sonrisa tiene el poder mágico de traer sol y calidez a mi mundo, incluso en los días más grises.",
-    tag: "Luz de mi vida"
+      "Dicen que la risa es la esencia de cada persona, y verte sonreír así es de esas cosas que siempre alegran el día. Nunca pierdas esa chispa.",
+    image: "/motivo-1.jpg",
+    tag: "Chispa única"
   },
   {
     id: 2,
-    title: "Me calmas cuando estoy mal",
-    shortDescription: "Tu presencia es mi paz",
+    title: "Tu fortaleza",
+    shortDescription: "Resiliencia ante cualquier adversidad",
     fullMessage:
-      "En medio del caos o cuando mi mente se llena de preocupaciones, basta escuchar tu dulce voz o sentir tu mano sobre la mía para que todo vuelva a estar en su lugar. Eres mi ancla y mi serenidad más pura.",
-    tag: "Mi refugio"
+      "Sé todo lo que te ha tocado atravesar este tiempo, y admiro enormemente la resiliencia con la que te levantas y sigues adelante.",
+    tag: "Fortaleza"
   },
   {
     id: 3,
-    title: "Amo cómo te ríes",
-    shortDescription: "Mi melodía favorita",
+    title: "Tu esfuerzo constante",
+    shortDescription: "Dedicación que inspira respeto",
     fullMessage:
-      "Esa risa espontánea, cristalina y contagiosa que tienes es la música más hermosa del universo. Escucharte feliz es el sonido que más disfruto en la vida; haría cualquier cosa con tal de verte reír siempre.",
-    tag: "Alegría pura"
+      "Ver cómo te esfuerzas día a día por salir adelante y cumplir tus metas es algo digno de reconocerse y aplaudirse.",
+    tag: "Dedicación"
   },
   {
     id: 4,
-    title: "Eres mi persona favorita",
-    shortDescription: "Entre miles de millones, te elijo a ti",
+    title: "Tu valentía silenciosa",
+    shortDescription: "Afrontar los días difíciles con la cabeza en alto",
     fullMessage:
-      "No hay nadie en el mundo con quien prefiera compartir mi tiempo, mis secretos, mis tonterías y mis silencios. De todas las almas de este planeta, la tuya es la única que encaja a la perfección con la mía.",
-    tag: "Mi única elección"
+      "Incluso en los momentos en que la carga parece pesada, mantienes la templanza y no te rindes. Esa valentía callada dice mucho de tu temple y carácter.",
+    tag: "Valentía"
   },
   {
     id: 5,
-    title: "Me haces sentir en casa",
-    shortDescription: "Hogar no es un lugar, eres tú",
+    title: "Tu capacidad de superación",
+    shortDescription: "Transformar cada reto en aprendizaje",
     fullMessage:
-      "No importa en qué ciudad estemos, si estamos bajo la lluvia o en la noche más fría: estar contigo es llegar a casa. Es esa sensación reconfortante de saber que he llegado al lugar donde pertenezco.",
-    tag: "Hogar"
+      "Tienes la maravillosa habilidad de sobreponerte a los momentos complicados, aprender de cada obstáculo y seguir construyendo tu propio camino con paso firme.",
+    tag: "Superación"
   },
   {
     id: 6,
-    title: "Tienes el corazón más bonito",
-    shortDescription: "Bondad, dulzura y nobleza infinita",
+    title: "Concentración pura",
+    shortDescription: "Determinación y enfoque total",
     fullMessage:
-      "Tu sensibilidad, la ternura con la que tratas a quienes te rodean y la nobleza de tus intenciones son cosas que me enamoran cada segundo. Tienes un corazón de oro que hace que el mundo sea un lugar infinitamente mejor.",
-    tag: "Alma hermosa"
+      "Cuando te propones algo, enfocas toda tu energía en lograrlo. Esa determinación es de las cosas que más valoro de ti.",
+    image: "/motivo-6.jpg",
+    tag: "Determinación"
   },
   {
     id: 7,
-    title: "Amo tus ojitos",
-    shortDescription: "La ventana a un cielo estrellado",
+    title: "Tu evolución",
+    shortDescription: "Cada tropiezo te hace más fuerte",
     fullMessage:
-      "Podría pasarme horas enteras mirándote a los ojos y nunca me cansaría. En ellos veo ternura, picardía, sinceridad y todo el universo de amor que me hace dar gracias por tenerte a mi lado.",
-    tag: "Mis estrellas"
+      "Cada tropiezo solo te ha hecho más fuerte y más sabia. Ver cómo has crecido y madurado con el tiempo es motivo de gran orgullo.",
+    tag: "Evolución"
   },
   {
     id: 8,
-    title: "Me inspiras a ser mejor",
-    shortDescription: "Mi mayor motivación cada mañana",
+    title: "Tu criterio propio",
+    shortDescription: "Saber lo que quieres y defenderlo",
     fullMessage:
-      "Tu fuerza, tus ganas de salir adelante y la persona tan maravillosa que eres me impulsan a crecer, a soñar más alto y a querer darte la versión más noble y dedicada de mí mismo.",
-    tag: "Inspiración"
+      "Has aprendido a valorar tu espacio, a cuidar tu bienestar y a tomar decisiones por ti misma. Esa seguridad en ti misma es admirable.",
+    tag: "Criterio"
   },
   {
     id: 9,
-    title: "Todo es más divertido contigo",
-    shortDescription: "Hasta lo más simple es una fiesta a tu lado",
+    title: "Tu paciencia en el proceso",
+    shortDescription: "Entender que los grandes pasos toman tiempo",
     fullMessage:
-      "Ir al supermercado, ver una película aburrida, caminar sin rumbo o quedarnos tirados en el sillón se vuelve el mejor plan del mundo si lo hago contigo. Contigo la vida nunca es monótona, es pura magia.",
-    tag: "Cómplice"
+      "Entender que no todo se resuelve de la noche a la mañana y perseverar a tu ritmo demuestra una madurez invaluable.",
+    tag: "Madurez"
   },
   {
     id: 10,
-    title: "Me escuchas de verdad",
-    shortDescription: "Atención, comprensión y empatía sincera",
+    title: "Tu propia luz",
+    shortDescription: "Brillar sin necesidad de compararte",
     fullMessage:
-      "Amo que cuando te hablo, me miras con interés genuino. Guardas cada detalle en tu memoria, me comprendes sin juzgarme y me das el espacio para ser 100% yo. Eso vale más que cualquier tesoro.",
-    tag: "Conexión"
+      "No necesitas competir con nadie; tu único objetivo es ser una mejor versión de ti misma cada día, y eso te hace destacar con luz propia.",
+    tag: "Luz propia"
   },
   {
     id: 11,
-    title: "Eres mi paz",
-    shortDescription: "El silencio que acaricia el alma",
+    title: "Buenos momentos",
+    shortDescription: "Recuerdos genuinos y espontáneos",
     fullMessage:
-      "Cuando el ritmo del mundo va a mil por hora, contigo todo desacelera. Me transmites una calma que no encuentro en ninguna otra parte. Estar contigo es respirar aire puro y renovar el espíritu.",
-    tag: "Serenidad"
+      "Al final, los recuerdos bonitos y genuinos se quedan guardados tal cual, con total naturalidad y aprecio.",
+    image: "/motivo-11.jpg",
+    tag: "Recuerdos"
   },
   {
     id: 12,
-    title: "Amo tu forma de ser",
-    shortDescription: "Auténtica, única e inigualable",
+    title: "Tu autenticidad",
+    shortDescription: "Sin poses ni apariencias",
     fullMessage:
-      "Amo tus manías, tus expresiones graciosas, tus opiniones firmes, tu coquetería natural y esa mezcla perfecta entre ternura y carácter. Eres auténtica de pies a cabeza, y me fascinas tal como eres.",
+      "Nunca intentas encajar, simplemente eres tú, y eso te hace única en cualquier lugar donde estés.",
     tag: "Autenticidad"
   },
   {
     id: 13,
-    title: "Me haces reír hasta cuando no quiero",
-    shortDescription: "El mejor remedio para cualquier tristeza",
+    title: "Tu sentido del humor",
+    shortDescription: "Ocurrencias y buena energía",
     fullMessage:
-      "Aunque a veces intente ponerme serio o esté de mal humor, sabes exactamente qué carita poner, qué decir o qué broma soltar para quebrarme y hacerme sonreír. Es imposible resistirse a tu encanto.",
-    tag: "Chispa de amor"
+      "Tus comentarios espontáneos, tus risas inesperadas y la frescura con la que ves ciertas cosas le ponen buena onda y ligereza a cualquier momento.",
+    tag: "Buena vibra"
   },
   {
     id: 14,
-    title: "Eres mi mejor amiga y mi amor",
-    shortDescription: "Dos almas, una complicidad eterna",
+    title: "Tu sinceridad",
+    shortDescription: "Transparencia que genera confianza",
     fullMessage:
-      "No solo tengo a la novia más hermosa de este planeta, sino también a mi confidente número uno, a mi compañera de batallas y a mi mejor amiga. Esa combinación hace que lo nuestro sea invencible.",
-    tag: "Amor & Amistad"
+      "En un mundo donde abundan las apariencias, tu transparencia y honestidad se aprecian profundamente. Eres directa y leal con lo que sientes.",
+    tag: "Sinceridad"
   },
   {
     id: 15,
-    title: "Tus abrazos son mi lugar favorito",
-    shortDescription: "El rincón más seguro del planeta",
+    title: "Tu calidez humana",
+    shortDescription: "Un corazón noble y atento",
     fullMessage:
-      "Cuando me rodeas con tus brazos y me recuesto en tu pecho, todo lo malo se apaga. Si tuviera que elegir un solo lugar en el que quedarme a vivir por el resto de mis días, sin dudarlo sería abrazado a ti.",
-    tag: "Abrazos eternos"
+      "Detrás de tu carácter firme hay una persona noble, empática y capaz de brindar un apoyo sincero a quienes realmente te importan.",
+    tag: "Nobleza"
   },
   {
     id: 16,
-    title: "Me enamoras cada día más",
-    shortDescription: "Un amor que crece sin parar",
+    title: "Tu estilo único",
+    shortDescription: "Personalidad en cada detalle",
     fullMessage:
-      "Pensé que ya había alcanzado el límite de lo que el corazón puede sentir, pero cada mañana despierto y descubro un nuevo detalle tuyo que me vuelve a enamorar como si fuera el primer día.",
-    tag: "Eternamente tuyo"
+      "Tienes una forma muy tuya de ver la vida y de expresarte que siempre destaca.",
+    image: "/motivo-16.jpg",
+    tag: "Estilo único"
   },
   {
     id: 17,
-    title: "Eres tan linda hasta enojada",
-    shortDescription: "Tus pucheros son lo más tierno del mundo",
+    title: "Expresión propia",
+    shortDescription: "Fuerza en tu voz y decisiones",
     fullMessage:
-      "Incluso cuando te cruzas de brazos, inflas los cachetitos o me miras seria, no puedo evitar pensar en lo hermosa y tierna que te ves. Solo me dan ganas de comerte a besos hasta que se te pase el berrinche.",
-    tag: "Ternura infinita"
+      "Que tu voz y tus decisiones siempre pesen más que cualquier crítica.",
+    image: "/motivo-17.jpg",
+    tag: "Voz propia"
   },
   {
     id: 18,
-    title: "Me cuidas sin que te lo pida",
-    shortDescription: "Tu amor se nota en cada detalle",
+    title: "Nuevos comienzos",
+    shortDescription: "Paz, claridad y nuevos caminos",
     fullMessage:
-      "Ese recordatorio de que coma a tiempo, tu preocupación cuando me siento mal, la forma en que me arropas o me miras para saber si estoy bien... Tu instinto de cuidar a quienes amas es el regalo más dulce de la vida.",
-    tag: "Amor protector"
+      "Que esta nueva etapa de tus 21 años te traiga mucha paz y claridad.",
+    tag: "Nuevos comienzos"
   },
   {
     id: 19,
-    title: "Amo soñar contigo el futuro",
-    shortDescription: "Nuestros proyectos, risas y caminos juntos",
+    title: "Salud y metas",
+    shortDescription: "Conquistar cada uno de tus proyectos",
     fullMessage:
-      "Cuando cierro los ojos y me imagino dentro de cinco, diez o cincuenta años, en todos mis planes estás tú: viajando, construyendo metas, riéndonos y envejeciendo tomados de la mano. Eres mi futuro favorito.",
-    tag: "Por siempre"
+      "Que alcances cada uno de los proyectos que tienes en mente.",
+    tag: "Metas"
   },
   {
     id: 20,
-    title: "Eres mi suerte",
-    shortDescription: "Mi mayor bendición en esta vida",
+    title: "La mitad del camino",
+    shortDescription: "Una de las mejores etapas de tu juventud",
     fullMessage:
-      "Haberte encontrado en este mundo inmenso es la mayor bendición y el golpe de suerte más afortunado de mi existencia. Ganarme tu corazón ha sido el premio más grande de todos.",
-    tag: "Mi fortuna"
+      "Estás empezando una de las mejores etapas de tu juventud, aprovéchala al máximo.",
+    tag: "Juventud"
   },
   {
     id: 21,
-    title: "Simplemente eres tú, y eso me basta",
-    shortDescription: "Mi Ñori, mi vida entera, mi todo",
+    title: "¡Feliz cumpleaños, mi Ñori, en este día especial!",
+    shortDescription: "Celebrando tus 21 vueltas al sol",
     fullMessage:
-      "No necesitas fingir nada, no necesitas hacer nada extraordinario para gustarme. Me gustas cuando te arreglas y me gustas despeinada en pijama. Te amo exactamente como eres, con cada virtud y cada detalle. Eres mi Ñori, y te amo con toda mi alma.",
-    tag: "Amor incondicional"
+      "Llegaste a los 21. Te deseo el mayor de los éxitos en esta nueva vuelta al sol, que la pases increíble, que la vida te sonría y que todos tus sueños se cumplan. ¡Feliz cumpleaños!",
+    image: "/motivo-21.jpg",
+    tag: "Cierre de oro 💜"
   }
 ];

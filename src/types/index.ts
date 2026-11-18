@@ -3,6 +3,6 @@ export interface Reason {
   title: string;
   shortDescription: string;
   fullMessage: string;
-  iconName?: string;
+  image?: string;
   tag?: string;
 }

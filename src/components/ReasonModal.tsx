@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Heart, Sparkles, ArrowRight, ArrowLeft } from "lucide-react";
 import confetti from "canvas-confetti";
@@ -19,6 +19,12 @@ export default function ReasonModal({
   onSelectReason,
   totalReasons,
 }: ReasonModalProps) {
+  const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    setImgError(false);
+  }, [reason?.id]);
+
   useEffect(() => {
     if (!reason) return;
 
@@ -48,23 +54,23 @@ export default function ReasonModal({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/80 backdrop-blur-md"
+          className="fixed inset-0 bg-black/85 backdrop-blur-md"
         />
 
         {/* Modal Window */}
         <motion.div
-          initial={{ scale: 0.8, opacity: 0, y: 20 }}
+          initial={{ scale: 0.85, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.85, opacity: 0, y: 20 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-lg bg-gradient-to-b from-[#1E112A] via-[#12081E] to-[#0D0417] text-white rounded-3xl border-2 border-[#A855F7] shadow-[0_0_50px_rgba(168,85,247,0.55)] p-6 sm:p-8 z-10 overflow-hidden"
+          className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto bg-gradient-to-b from-[#1E112A] via-[#12081E] to-[#0D0417] text-white rounded-3xl border-2 border-[#A855F7] shadow-[0_0_50px_rgba(168,85,247,0.55)] p-5 sm:p-7 z-10"
         >
           {/* Subtle glowing orb in background */}
           <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-[#A855F7]/25 rounded-full blur-3xl pointer-events-none" />
@@ -73,14 +79,14 @@ export default function ReasonModal({
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 text-purple-300 hover:text-white rounded-full bg-purple-900/40 hover:bg-purple-800/60 transition-colors border border-purple-500/30"
+            className="sticky sm:absolute top-2 right-2 sm:top-4 sm:right-4 float-right sm:float-none p-2 text-purple-300 hover:text-white rounded-full bg-purple-900/40 hover:bg-purple-800/60 transition-colors border border-purple-500/30 z-20"
             aria-label="Cerrar modal"
           >
             <X className="w-5 h-5" />
           </button>
 
           {/* Badge Header: Motivo X de 21 */}
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-3 clear-both sm:clear-none">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#A855F7] to-[#C084FC] text-white shadow-[0_0_15px_rgba(168,85,247,0.6)]">
               <Sparkles className="w-3.5 h-3.5 fill-white" />
               <span>Motivo {reason.id} de {totalReasons}</span>
@@ -94,27 +100,43 @@ export default function ReasonModal({
           </div>
 
           {/* Reason Title */}
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 tracking-tight leading-tight mt-1 mb-2">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 tracking-tight leading-tight mt-1 mb-1">
             {reason.title}
           </h3>
 
-          <p className="text-xs sm:text-sm text-purple-400 font-medium italic mb-5 flex items-center gap-1.5">
+          <p className="text-xs sm:text-sm text-purple-400 font-medium italic mb-4 flex items-center gap-1.5">
             <Heart className="w-3.5 h-3.5 text-pink-400 fill-pink-400" />
             <span>{reason.shortDescription}</span>
           </p>
+
+          {/* Optional Reason Photo */}
+          {reason.image && !imgError && (
+            <div className="relative w-full rounded-2xl overflow-hidden mb-4 border-2 border-[#A855F7]/60 shadow-[0_0_20px_rgba(168,85,247,0.35)] bg-purple-950/40">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={reason.image}
+                alt={reason.title}
+                onError={() => setImgError(true)}
+                className="w-full max-h-64 sm:max-h-72 object-cover object-center rounded-2xl"
+              />
+              <div className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-sm px-2 py-0.5 rounded-md text-[11px] text-purple-200">
+                Recuerdo especial ✨
+              </div>
+            </div>
+          )}
 
           {/* Divider */}
           <div className="w-full h-px bg-gradient-to-r from-purple-500/40 via-purple-400/80 to-purple-500/40 my-3" />
 
           {/* Full Romantic Prose */}
-          <div className="my-5 p-4 sm:p-5 rounded-2xl bg-purple-950/40 border border-purple-800/40 backdrop-blur-sm">
+          <div className="my-4 p-4 sm:p-5 rounded-2xl bg-purple-950/40 border border-purple-800/40 backdrop-blur-sm">
             <p className="text-purple-100 text-base sm:text-lg leading-relaxed font-normal">
               &ldquo;{reason.fullMessage}&rdquo;
             </p>
           </div>
 
           {/* Footer Controls */}
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-3 pt-2">
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-3 pt-2">
             <button
               onClick={() => onSelectReason(reason.id - 1)}
               disabled={reason.id <= 1}
