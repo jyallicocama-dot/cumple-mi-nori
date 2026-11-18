@@ -187,6 +187,7 @@ export default function ReasonsSection() {
 
       {/* MODAL FOR SINGLE REASON */}
       <ReasonModal
+        key={activeReason ? `reason-${activeReason.id}` : "none"}
         reason={activeReason}
         onClose={() => setActiveReason(null)}
         onSelectReason={handleSelectReasonById}

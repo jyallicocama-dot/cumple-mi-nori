@@ -28,7 +28,7 @@ export default function ReasonModal({
   useEffect(() => {
     if (!reason) return;
 
-    // Prevent body horizontal/vertical scrolling behind modal
+    // Prevent body scrolling behind modal
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
@@ -59,10 +59,11 @@ export default function ReasonModal({
   if (!reason) return null;
 
   return (
-    <AnimatePresence>
-      {/* Highest Z-Index (z-[100]) to cover footer and controls on mobile */}
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-5 overflow-x-hidden overflow-y-auto overscroll-y-contain">
-        
+    <AnimatePresence mode="wait">
+      <div
+        key={`modal-overlay-${reason.id}`}
+        className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-5 overflow-x-hidden overflow-y-auto overscroll-y-contain"
+      >
         {/* Full Dark Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -72,12 +73,13 @@ export default function ReasonModal({
           className="fixed inset-0 bg-black/90 backdrop-blur-md"
         />
 
-        {/* Modal Window: locked horizontally, smooth vertical scroll */}
+        {/* Modal Window: unique key ensures clean unmount/mount between reasons */}
         <motion.div
-          initial={{ scale: 0.9, opacity: 0, y: 15 }}
+          key={`modal-card-${reason.id}`}
+          initial={{ scale: 0.92, opacity: 0, y: 12 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
-          exit={{ scale: 0.9, opacity: 0, y: 15 }}
-          transition={{ type: "spring", damping: 26, stiffness: 320 }}
+          exit={{ scale: 0.92, opacity: 0, y: 12 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
           style={{ touchAction: "pan-y" }}
           className="relative w-full max-w-[calc(100vw-1.5rem)] sm:max-w-lg max-h-[88vh] overflow-x-hidden overflow-y-auto bg-gradient-to-b from-[#1E112A] via-[#12081E] to-[#0D0417] text-white rounded-3xl border-2 border-[#A855F7] shadow-[0_0_50px_rgba(168,85,247,0.6)] p-5 sm:p-7 z-10 pb-8 sm:pb-7"
         >
@@ -91,7 +93,7 @@ export default function ReasonModal({
           </button>
 
           {/* Badge Header: Motivo X de 21 */}
-          <div className="flex items-center gap-2 mb-3 clear-both">
+          <div key={`badge-${reason.id}`} className="flex items-center gap-2 mb-3 clear-both">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#A855F7] to-[#C084FC] text-white shadow-[0_0_15px_rgba(168,85,247,0.6)]">
               <Sparkles className="w-3.5 h-3.5 fill-white" />
               <span>Motivo {reason.id} de {totalReasons}</span>
@@ -105,18 +107,27 @@ export default function ReasonModal({
           </div>
 
           {/* Reason Title */}
-          <h3 className="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 tracking-tight leading-tight mt-1 mb-1">
+          <h3
+            key={`title-${reason.id}`}
+            className="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 tracking-tight leading-tight mt-1 mb-1"
+          >
             {reason.title}
           </h3>
 
-          <p className="text-xs sm:text-sm text-purple-300 font-medium italic mb-4 flex items-center gap-1.5">
+          <p
+            key={`sub-${reason.id}`}
+            className="text-xs sm:text-sm text-purple-300 font-medium italic mb-4 flex items-center gap-1.5"
+          >
             <span className="text-sm">✨</span>
             <span>{reason.shortDescription}</span>
           </p>
 
-          {/* Centered Photo Container */}
+          {/* Centered Photo Container (Keyed uniquely) */}
           {reason.image && !imgError && (
-            <div className="w-full flex items-center justify-center my-3 bg-purple-950/50 rounded-2xl border-2 border-[#A855F7]/50 shadow-[0_0_25px_rgba(168,85,247,0.3)] p-1.5 overflow-hidden">
+            <div
+              key={`img-box-${reason.id}`}
+              className="w-full flex items-center justify-center my-3 bg-purple-950/50 rounded-2xl border-2 border-[#A855F7]/50 shadow-[0_0_25px_rgba(168,85,247,0.3)] p-1.5 overflow-hidden"
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={reason.image}
@@ -128,17 +139,23 @@ export default function ReasonModal({
           )}
 
           {/* Divider */}
-          <div className="w-full h-px bg-gradient-to-r from-purple-500/40 via-purple-400/80 to-purple-500/40 my-3" />
+          <div key={`div-${reason.id}`} className="w-full h-px bg-gradient-to-r from-purple-500/40 via-purple-400/80 to-purple-500/40 my-3" />
 
-          {/* Full Prose */}
-          <div className="my-4 p-4 sm:p-5 rounded-2xl bg-purple-950/40 border border-purple-800/40 backdrop-blur-sm">
-            <p className="text-purple-100 text-sm sm:text-base leading-relaxed font-normal">
+          {/* Full Prose (Explicitly Keyed with reason.id to guarantee fresh text) */}
+          <div
+            key={`prose-box-${reason.id}`}
+            className="my-4 p-4 sm:p-5 rounded-2xl bg-purple-950/40 border border-purple-800/40 backdrop-blur-sm"
+          >
+            <p
+              key={`prose-text-${reason.id}`}
+              className="text-purple-100 text-sm sm:text-base leading-relaxed font-normal"
+            >
               &ldquo;{reason.fullMessage}&rdquo;
             </p>
           </div>
 
-          {/* Footer Controls: Centered and responsive */}
-          <div className="mt-5 flex items-center justify-between gap-2 pt-2">
+          {/* Footer Controls */}
+          <div key={`controls-${reason.id}`} className="mt-5 flex items-center justify-between gap-2 pt-2">
             <button
               onClick={() => onSelectReason(reason.id - 1)}
               disabled={reason.id <= 1}
@@ -152,7 +169,6 @@ export default function ReasonModal({
               <span>Anterior</span>
             </button>
 
-            {/* Changed from 'Te amo' to 'Con cariño 💐' */}
             <button
               onClick={onClose}
               className="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all flex items-center gap-1.5"

@@ -368,9 +368,8 @@ export default function BouquetOfStars() {
           <span>Ramo de estrellas para ti</span>
           <span className="text-purple-400">✨</span>
         </h3>
-        <p className="text-sm sm:text-base text-purple-200/90 font-medium italic flex items-center justify-center gap-1.5">
+        <p className="text-sm sm:text-base text-purple-200/90 font-medium italic flex items-center justify-center">
           <span>Hecho con mucho aprecio, para Mi Ñori</span>
-          <span className="text-sm">💐</span>
         </p>
       </div>
     </motion.div>
